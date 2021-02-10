@@ -34,8 +34,8 @@ class Todolist extends Component {
     renderTodos(){
         return this.state.items.map((item) => {
             return(
-                <div key={item}>
-                    {item} | <button onClick={this.deleteTodo.bind(this)}>X</button>
+                <div className="list-group-item" key={item}>
+                    {item} | <button onClick={this.deleteTodo.bind(this)}>x</button>
                 </div>
             );
         });
@@ -45,12 +45,12 @@ class Todolist extends Component {
     render() {
         return(
             <div>
-                <h1>Ma Todo list</h1>
-                <form>
-                    <input type="text" placeholder="Renseigner un item"  value={this.state.userInput} onChange={this.onChange.bind(this)}/>
-                    <button onClick={this.addTodo.bind(this)}>Ajouter</button>
+                <h1 align="center">Nene's Todo list</h1>
+                <form className="form-row align-items-center">
+                    <input type="text" placeholder="Renseigner un item"  value={this.state.userInput} onChange={this.onChange.bind(this)} className="form-control mb-2"/>
+                    <button onClick={this.addTodo.bind(this)} className="btn btn-dark">Ajouter</button>
                 </form>
-                <div>
+                <div className="list-group">
                     {this.renderTodos()}
                 </div>
             </div>
